@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-6">Correntistas</h1>
+    <p class="lead-1">Cadastro de correntistas</p>
+    <hr class="my-2">
+  </div>
+  <div class="row g-2">
+    <div class="col-md-3">
+      <input class="form-control" type="text" placeholder="CPF" [(ngModel)]="cpf" id="iCpf"/>
+    </div>
+    <div class="col-5">
+      <input class="form-control" type="text" placeholder="Nome do correntista" [(ngModel)]="nome" id="iNome"/>
+    </div>
+    <div class="col-3">
+      <div class="d-grid gap-2 d-md-flex">
+        <button type="button" class="btn btn-outline-primary me-md-2" (click)="save()">Salvar</button>
+        <a class="btn btn-outline-danger" routerLink="/movimentacoes">Voltar</a>
+      </div>
+    </div>
+  </div>
+  <p></p>
+  <div *ngFor="let item of correntistas; index as i" class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{item.nome}}</h5>
+      <p class="card-text">Conta N° {{item.conta.numero}}</p>
+      <p class="card-text">Saldo: R$ {{item.conta.saldo}}</p>
+    </div>
+  </div>
+</div>

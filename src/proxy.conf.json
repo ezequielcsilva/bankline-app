@@ -1,0 +1,7 @@
+{
+  "/api/*": {
+      "target": "https://bank-bankline-api.herokuapp.com",
+      "secure": false,
+      "logLevel": "debug"
+  }
+}
